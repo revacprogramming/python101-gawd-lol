@@ -4,13 +4,20 @@ largest = None
 smallest = None
 
 while True:
-    num = input("Enter a number? ")
+  try:
+      num = input("Enter a number: ")
 
-    if num == "done":
-        break
+      if num == "done":
+          break
 
-    # ...
+      inum=int(num)
+      if largest==None or inum>largest:
+        largest=inum
+      elif smallest==None or inum<smallest:
+        smallest=inum
 
-    print(num)
+  except:
+      print("Invalid input")
 
-print("Maximum", largest)
+print("Maximum is", largest)
+print("Minimum is", smallest)
